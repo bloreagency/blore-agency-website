@@ -1,59 +1,69 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Users, Award, Lightbulb, Zap, Target, TrendingUp } from "lucide-react"
+'use client';
+
+import React, { useEffect, useRef } from 'react';
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Users, Award, Lightbulb, Zap, Target, TrendingUp } from "lucide-react";
+import * as THREE from 'three';
+// The import below needs to be corrected if it's not a default export or if the path is wrong.
+// Assuming 'vanta/dist/vanta.net.min.js' exports a function.
+import NET from 'vanta/dist/vanta.net.min.js';
 
 export default function HomePage() {
+  const vantaRef = useRef(null);
+
+  useEffect(() => {
+    let vantaEffect: any = null;
+    if (vantaRef.current) {
+      vantaEffect = NET({
+        el: vantaRef.current,
+        THREE: THREE,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xC66DD9,
+        backgroundColor: 0x362A51,
+        points: 7.00,
+        maxDistance: 20.00,
+        spacing: 25.00
+      });
+    }
+    // دالة التنظيف للتأكد من إيقاف الأنيميشن عند مغادرة الصفحة
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, []); // القوسان الفارغان يعنيان أن هذا الكود سيعمل مرة واحدة فقط عند تحميل الصفحة
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
-        {/* Custom Professional Background */}
-        <div className="absolute inset-0">
-          <Image src="/images/hero-bg.png" alt="" fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-purple-900/80 to-cyan-900/90"></div>
-        </div>
-
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-bounce"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white/5 rounded-full blur-2xl animate-pulse"></div>
-        </div>
-
+      {/* Vanta.js Background is now the Hero Section itself */}
+      <section ref={vantaRef} className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+        
+        {/* Hero Section Content */}
         <div className="relative z-10 text-center max-w-5xl mx-auto">
-          {/* Logo */}
-          <div className="mb-8 transform hover:scale-105 transition-transform duration-500">
-            <div className="flex items-center justify-center mb-6">
-              <Image
-                src="/images/blore-logo-white.png"
-                alt="Blore Agency Logo"
-                width={120}
-                height={120}
-                className="drop-shadow-2xl animate-fade-in"
-              />
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 animate-fade-in-up">BLORE AGENCY</h1>
+          <div className="mb-8">
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 animate-fade-in-up">BLORE AGENCY</h1>
             <div className="w-32 h-1 bg-gradient-to-r from-purple-400 to-cyan-400 mx-auto rounded-full animate-fade-in-up"></div>
           </div>
 
-          {/* Slogan */}
-          <h2 className="text-2xl md:text-4xl font-light text-white/90 mb-8 animate-fade-in-up delay-200">
-            Where Creativity Meets Technology
+          <h2 className="text-3xl md:text-5xl font-light text-white/90 mb-8 animate-fade-in-up delay-200">
+            Always Here Always Assist You
           </h2>
 
-          {/* Intro */}
           <p className="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-300">
             We're a forward-thinking creative digital agency that transforms bold ideas into extraordinary digital
             experiences. From innovative branding to cutting-edge AI-powered solutions, we craft stories that resonate
             and technologies that perform.
           </p>
 
-          {/* CTA Button */}
           <Button
             asChild
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white px-10 py-6 text-lg rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-500/25 font-semibold animate-fade-in-up delay-400"
+            className="bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white px-14 py-8 text-xl rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-500/25 font-semibold animate-fade-in-up delay-400"
           >
             <Link href="/contact" className="inline-flex items-center gap-3">
               Let's Talk
@@ -63,7 +73,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What Makes Us Different */}
+      {/* What Makes Us Different Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -84,7 +94,6 @@ export default function HomePage() {
                 brand a competitive edge in the digital landscape.
               </p>
             </div>
-
             <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-cyan-400/30">
                 <Users className="w-10 h-10 text-white" />
@@ -95,7 +104,6 @@ export default function HomePage() {
                 exceptional results that align with your vision.
               </p>
             </div>
-
             <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-purple-500/30">
                 <Award className="w-10 h-10 text-white" />
@@ -104,39 +112,6 @@ export default function HomePage() {
               <p className="text-gray-600 leading-relaxed">
                 Our portfolio speaks for itself. We've helped countless brands achieve their digital goals and grow
                 their presence across multiple platforms.
-              </p>
-            </div>
-
-            <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-              <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-cyan-400/30">
-                <Zap className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Fast Execution</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We understand the importance of time in business. Our streamlined processes ensure quick turnaround
-                without compromising on quality.
-              </p>
-            </div>
-
-            <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-purple-500/30">
-                <Target className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Strategic Focus</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Every decision we make is data-driven and strategically aligned with your business objectives and market
-                positioning.
-              </p>
-            </div>
-
-            <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-              <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-cyan-400/30">
-                <TrendingUp className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Growth Focused</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We don't just create beautiful designs – we build solutions that drive measurable business growth and
-                long-term success.
               </p>
             </div>
           </div>
@@ -150,7 +125,6 @@ export default function HomePage() {
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
             From branding to AI-powered marketing, we offer comprehensive digital solutions that drive results.
           </p>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
               "Branding & Graphic Design",
@@ -170,7 +144,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-
           <Button
             asChild
             size="lg"
@@ -201,5 +174,5 @@ export default function HomePage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

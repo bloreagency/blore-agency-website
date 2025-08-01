@@ -11,23 +11,24 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="/" className="inline-flex items-center space-x-3">
               <Image src="/images/blore-logo-white.png" alt="Blore Agency Logo" width={40} height={40} />
-              <span className="text-2xl font-bold">BLORE</span>
+              <span className="text-2xl font-bold">BLORE AGENCY</span>
             </Link>
             <p className="text-gray-400 leading-relaxed">
               Where creativity meets technology. We craft digital experiences that inspire, engage, and drive measurable
               results for businesses worldwide.
             </p>
+            {/* --- الروابط المحدثة هنا --- */}
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">
+              <a href="https://m.facebook.com/bloreagency.EG/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">
+              <a href="https://x.com/bloreagency_eg?t=CjizSyZnxEAoVmKXW_HQew&s=09" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">
+              <a href="https://www.linkedin.com/company/bloreagency/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">
+              <a href="https://www.instagram.com/bloreagency.eg/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
@@ -96,7 +97,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-purple-400" />
-                <span className="text-gray-400">bloreagency@gmail.com</span>
+                <span className="text-gray-400">info@bloreagency.com</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-purple-400" />

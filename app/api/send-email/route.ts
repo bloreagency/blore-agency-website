@@ -5,20 +5,20 @@ export async function POST(request: Request) {
   try {
     const { name, email, company, phone, service, budget, message } = await request.json();
 
-    // --- إعدادات إرسال البريد ---
-    // استبدل 'YOUR_GMAIL_ADDRESS' و 'YOUR_GMAIL_APP_PASSWORD' ببياناتك
+    // --- إعدادات آمنة باستخدام متغيرات البيئة ---
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'bloreagency@gmail.com', // ضع هنا إيميلك الذي ستستقبل عليه الرسائل
-        pass: 'imsa jmwl xhbv rvrt', // ضع هنا كلمة مرور التطبيقات التي ستنشئها
+        user: process.env.EMAIL_USER, // هذا هو حساب جوجل الذي يرسل
+        pass: process.env.EMAIL_PASS, // كلمة مرور التطبيقات الخاصة به
       },
     });
 
     // --- إعدادات الرسالة ---
     const mailOptions = {
-      from: email, // البريد المرسل
-      to: 'bloreagency@gmail.com', // البريد المستقبل (بريدك)
+      from: email, // البريد الخاص بالعميل
+      to: process.env.EMAIL_TO, // <-- التعديل: سيقرأ info@bloreagency.com من Vercel
+      replyTo: email, // مهم جدًا: لكي تتمكن من الرد على العميل مباشرة
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h1>New Contact Form Submission</h1>

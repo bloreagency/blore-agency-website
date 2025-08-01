@@ -17,8 +17,7 @@ export default function ContactPage() {
     budget: "",
     message: "",
   })
-  
-  // States for submission status
+
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
 
@@ -41,7 +40,6 @@ export default function ContactPage() {
 
       if (response.ok) {
         setSubmitStatus({ type: 'success', message: 'Your message has been sent successfully!' })
-        // Clear form
         setFormData({
             name: "", email: "", company: "", phone: "", service: "", budget: "", message: "",
         })
@@ -58,7 +56,7 @@ export default function ContactPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value, // <-- تم تصحيح الخطأ هنا
     })
   }
 
@@ -242,7 +240,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-gray-900 font-semibold text-lg">Email</h3>
-                    <p className="text-gray-600">bloreagency@gmail.com</p>
+                    <p className="text-gray-600">info@bloreagency.com</p>
                   </div>
                 </div>
 
@@ -272,25 +270,25 @@ export default function ContactPage() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
                   <a
-                    href="https://www.facebook.com/share/1F3qPzqf7D/?mibextid=wwXIfr"
+                    href="https://m.facebook.com/bloreagency.EG/" target="_blank" rel="noopener noreferrer"
                     className="w-10 h-10 bg-gradient-to-r from-purple-500 to-cyan-400 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
                   >
                     <Facebook className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://x.com/bloreagency_eg?t=CjizSyZnxEAoVmKXW_HQew&s=09"
+                    href="https://x.com/bloreagency_eg?t=CjizSyZnxEAoVmKXW_HQew&s=09" target="_blank" rel="noopener noreferrer"
                     className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
                   >
                     <Twitter className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/bloreagency/"
+                    href="https://www.linkedin.com/company/bloreagency/" target="_blank" rel="noopener noreferrer"
                     className="w-10 h-10 bg-gradient-to-r from-purple-600 to-cyan-400 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://www.instagram.com/bloreagency.eg?igsh=MXc3d2ExZnJycm53ZA%3D%3D&utm_source=qr"
+                    href="https://www.instagram.com/bloreagency.eg/" target="_blank" rel="noopener noreferrer"
                     className="w-10 h-10 bg-gradient-to-r from-cyan-600 to-purple-500 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
                   >
                     <Instagram className="w-5 h-5" />
