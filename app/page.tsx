@@ -1,12 +1,12 @@
 'use client'; // <-- هذا السطر ضروري لحل مشكلة Hydration
 
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button"; // تعديل المسار
 import { ArrowRight, Users, Award, Lightbulb } from "lucide-react";
 import dynamic from 'next/dynamic';
 
 // استيراد ديناميكي للمكون مع تعطيل العرض على الخادم (يحل كل مشاكل Hydration)
-const VantaBackground = dynamic(() => import('@/components/VantaBackground'), {
+const VantaBackground = dynamic(() => import('../components/VantaBackground'), { // تعديل المسار
   ssr: false,
 });
 
@@ -81,9 +81,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      
-      {/* ... باقي أقسام الصفحة يمكنك إضافتها هنا ... */}
-
     </div>
   );
 }
