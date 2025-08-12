@@ -1,0 +1,50 @@
+.logos {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logosTrack {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: logos-scroll 25s linear infinite;
+}
+
+.logosSlide {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  white-space: nowrap;
+}
+
+.logosSlide img {
+  height: 60px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  user-select: none;
+}
+
+.logosSlide img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.logos:hover .logosTrack {
+  animation-play-state: paused;
+}
+
+/* لفة كاملة لأن عندنا صفين متتالين */
+@keyframes logos-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 640px) {
+  .logosSlide { gap: 24px; }
+  .logosSlide img { height: 44px; }
+}

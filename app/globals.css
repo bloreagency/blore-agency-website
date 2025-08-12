@@ -170,3 +170,102 @@ html {
     animation-duration: 0.6s;
   }
 }
+.animate-logo-scroll {
+  display: flex;
+  width: max-content;
+  animation: scrollLogos 60s linear infinite;
+}
+
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* --- كود شريط الشعارات المتحرك النهائي والصحيح --- */
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  background: #f9fafb; /* نفس لون الخلفية الرمادية */
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(249, 250, 251, 0), #f9fafb);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(249, 250, 251, 0), #f9fafb);
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused; /* يوقف الحركة عند مرور الماوس */
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 60s scroll infinite linear;
+}
+
+.logos-slide img {
+  height: 70px; /* زيادة ارتفاع اللوجوهات */
+  width: auto; /* للحفاظ على أبعاد الصورة */
+  margin: 0 40px; /* مسافة بين اللوجوهات */
+  vertical-align: middle;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* الحاوية الرئيسية للشعارات */
+.logos {
+  overflow: hidden;
+  padding: 20px 0;
+  background: white;
+  white-space: nowrap;
+  display: flex;
+}
+
+/* صف الشعارات */
+.logos-slide {
+  display: flex;
+  align-items: center;
+  animation: scroll 25s linear infinite;
+}
+
+/* صور الشعارات */
+.logos-slide img {
+  height: 60px; /* عدل الارتفاع حسب احتياجك */
+  margin-right: 40px;
+  object-fit: contain;
+}
+
+/* الحركة الأفقية */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
