@@ -1,8 +1,18 @@
+"use client" // <-- إضافة هذا السطر مهمة
+
 import Link from "next/link"
 import Image from "next/image"
 import { Mail, Phone, Twitter, Linkedin, Instagram, Facebook } from "lucide-react"
+import { useState, useEffect } from "react" // <-- استيراد المكتبات اللازمة
 
 export default function Footer() {
+  const [currentYear, setCurrentYear] = useState('');
+
+  useEffect(() => {
+    // هذه الوظيفة ستعمل في المتصفح فقط
+    setCurrentYear(new Date().getFullYear().toString());
+  }, []);
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
@@ -17,7 +27,6 @@ export default function Footer() {
               Where creativity meets technology. We craft digital experiences that inspire, engage, and drive measurable
               results for businesses worldwide.
             </p>
-            {/* --- الروابط المحدثة هنا --- */}
             <div className="flex space-x-4">
               <a href="https://m.facebook.com/bloreagency.EG/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">
                 <Facebook className="w-5 h-5" />
@@ -119,7 +128,8 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400">© {new Date().getFullYear()} Blore Agency. All rights reserved.</p>
+          {/* --- السطر الذي تم تصحيحه --- */}
+          <p className="text-gray-400">© {currentYear} Blore Agency. All rights reserved.</p>
         </div>
       </div>
     </footer>

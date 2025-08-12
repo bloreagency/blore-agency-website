@@ -32,7 +32,6 @@ export default function Navigation() {
               height={50}
               className="group-hover:scale-105 transition-transform duration-300"
             />
-            {/* --- هذا هو السطر الذي تم تعديله --- */}
             <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-cyan-500 text-transparent bg-clip-text group-hover:from-purple-700 group-hover:to-cyan-600 transition-all duration-300">
               BLORE AGENCY
             </span>

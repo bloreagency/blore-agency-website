@@ -1,0 +1,13 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "work": "Our Work",
+    "contact": "Contact",
+    "lets_talk": "Let's Talk"
+  },
+  "footer": {
+    "description": "Where creativity meets technology. We craft digital experiences that inspire, engage, and drive measurable results for businesses worldwide."
+  }
+}
