@@ -1,12 +1,12 @@
-'use client'; // <-- هذا السطر ضروري لحل مشكلة Hydration
+'use client'; // ضروري لأن الصفحة فيها تأثيرات على العميل
 
 import Link from "next/link";
-import { Button } from "../components/ui/button"; // تعديل المسار
+import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Award, Lightbulb } from "lucide-react";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
-// استيراد ديناميكي للمكون مع تعطيل العرض على الخادم (يحل كل مشاكل Hydration)
-const VantaBackground = dynamic(() => import('../components/VantaBackground'), { // تعديل المسار
+// ✅ استيراد مكوّن الخلفية باستخدام alias @/ (يتطلب tsconfig بها baseUrl + paths)
+const VantaBackground = dynamic(() => import("@/components/VantaBackground"), {
   ssr: false,
 });
 
@@ -17,17 +17,22 @@ export default function HomePage() {
       <VantaBackground>
         <div className="relative z-10 text-center max-w-5xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 animate-fade-in-up">BLORE AGENCY</h1>
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 animate-fade-in-up">
+              BLORE AGENCY
+            </h1>
             <div className="w-32 h-1 bg-gradient-to-r from-purple-400 to-cyan-400 mx-auto rounded-full animate-fade-in-up"></div>
           </div>
+
           <h2 className="text-3xl md:text-5xl font-light text-white/90 mb-8 animate-fade-in-up delay-200">
             Where Creativity Meets Technology
           </h2>
+
           <p className="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-300">
             We're a forward-thinking creative digital agency that transforms bold ideas into extraordinary digital
             experiences. From innovative branding to cutting-edge AI-powered solutions, we craft stories that resonate
             and technologies that perform.
           </p>
+
           <Button
             asChild
             size="lg"
@@ -50,6 +55,7 @@ export default function HomePage() {
               We combine creative excellence with cutting-edge technology to deliver results that exceed expectations.
             </p>
           </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-purple-500/30">
@@ -60,6 +66,7 @@ export default function HomePage() {
                 We stay ahead of trends and leverage the latest technologies to give your brand a competitive edge.
               </p>
             </div>
+
             <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-cyan-400/30">
                 <Users className="w-10 h-10 text-white" />
@@ -69,6 +76,7 @@ export default function HomePage() {
                 Your success is our priority. We work closely with you to ensure exceptional results that align with your vision.
               </p>
             </div>
+
             <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-purple-500/30">
                 <Award className="w-10 h-10 text-white" />
@@ -81,6 +89,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ... ضع بقية الأقسام هنا عند الحاجة ... */}
     </div>
   );
 }

@@ -269,3 +269,73 @@ html {
     transform: translateX(-100%);
   }
 }
+/* ===== RGB Animated Background for Our Work hero ===== */
+@keyframes rgbShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.rgb-animated {
+  background:
+    linear-gradient(
+      120deg,
+      #ff00f2, #8c00ff, #00d5ff, #0033ff,
+      #00c3ff, #6a00ff, #ff00c8, #3588f5
+    );
+  background-size: 800% 800%;
+  animation: rgbShift 18s linear infinite;
+}
+/* ===== Our Work hero: RGB animated background ===== */
+@keyframes rgbShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.rgb-animated {
+  background: linear-gradient(
+    120deg,
+    #dd00ff, #00eeff, #00ffcc, #a600ff,
+    #00c3ff, #6a00ff, #ff00c8, #00fffb
+  );
+  background-size: 800% 800%;
+  animation: rgbShift 18s linear infinite;
+}
+
+/* ===== Clients marquee (horizontal) ===== */
+.clients-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.clients-track {
+  display: flex;
+  flex-direction: row;     /* يضمن صف أفقي */
+  align-items: center;
+  gap: 3rem;
+  white-space: nowrap;     /* يمنع النزول لسطر جديد */
+  width: max-content;
+  animation: marqueeX 28s linear infinite;
+}
+@keyframes marqueeX {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* لازم العناصر تتكرر لتحقيق لووب سلس */
+}
+/* ✅ أنيميشن للـ Gradient */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background: linear-gradient(-45deg, #6b21a8, #1e3a8a, #000000, #111827);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
