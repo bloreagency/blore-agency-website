@@ -295,8 +295,8 @@ html {
 .rgb-animated {
   background: linear-gradient(
     120deg,
-    #dd00ff, #00eeff, #00ffcc, #a600ff,
-    #00c3ff, #6a00ff, #ff00c8, #00fffb
+    #dd00ff, #be8afe, #2f8eee, #a600ff,
+    #00c3ff, #6a00ff, #ff00c8, #4476ff
   );
   background-size: 800% 800%;
   animation: rgbShift 18s linear infinite;

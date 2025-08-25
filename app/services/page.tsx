@@ -1,6 +1,30 @@
-import { Palette, Code, Smartphone, Video, Megaphone, Brain, ArrowRight, CheckCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import Link from "next/link";
+import { Palette, Code, Smartphone, Video, Megaphone, Brain, ArrowRight, CheckCircle } from "lucide-react";
+
+/** ===== SEO (App Router) ===== */
+export const metadata = {
+  title: "Services | BLORE Agency",
+  description:
+    "Discover BLORE Agency services: Branding & Graphic Design, Web Design & Development, Mobile Apps, Motion Graphics, Social Media Marketing, and AI Marketing Solutions.",
+  alternates: { canonical: "https://www.bloreagency.com/services" },
+  openGraph: {
+    title: "Services | BLORE Agency",
+    description:
+      "Branding, Web, Mobile, Motion, Social Media, and AI Marketing solutions tailored to your goals in Egypt & KSA.",
+    url: "https://www.bloreagency.com/services",
+    siteName: "BLORE Agency",
+    type: "website",
+    images: [
+      { url: "/images/portfolio-blore-motion.png", width: 1200, height: 630, alt: "BLORE Agency Services" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | BLORE Agency",
+    description: "We craft measurable, high-impact solutions across branding, web, media, and AI.",
+    images: ["/images/portfolio-blore-motion.png"],
+  },
+};
 
 export default function ServicesPage() {
   const services = [
@@ -93,13 +117,14 @@ export default function ServicesPage() {
       ],
       gradient: "from-cyan-500 to-purple-600",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-purple-600 to-cyan-500">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Hero Section — RGB animated + overlay */}
+      <section className="pt-32 pb-20 px-4 rgb-animated relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/30 pointer-events-none" aria-hidden="true" />
+        <div className="relative max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up">Our Services</h1>
           <p className="text-xl text-white/90 leading-relaxed animate-fade-in-up delay-200">
             From creative branding to AI-powered marketing solutions, we provide comprehensive digital services that
@@ -108,12 +133,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Grid (unchanged) */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
-              const IconComponent = service.icon
+              const IconComponent = service.icon;
               return (
                 <div
                   key={index}
@@ -137,13 +162,13 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section (unchanged) */}
       <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -193,25 +218,22 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section (unchanged) */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-gray-600 mb-8">
             Let's discuss your project and explore how our services can help you achieve your digital goals.
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white px-10 py-6 text-lg rounded-full transform hover:scale-105 transition-all duration-300 shadow-xl"
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-semibold hover:from-purple-700 hover:to-cyan-600 transition"
           >
-            <Link href="/contact" className="inline-flex items-center gap-3">
-              Let's Talk
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </Button>
+            Let's Talk
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </section>
     </div>
-  )
+  );
 }

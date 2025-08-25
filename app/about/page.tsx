@@ -1,14 +1,38 @@
-import { Heart, Eye, Users, Target, Zap, Shield, CheckCircle } from "lucide-react"
-import Image from "next/image" // تأكد من وجود هذا السطر
+import { Heart, Eye, Users, Target, Zap, Shield, CheckCircle } from "lucide-react";
+import Image from "next/image";
+
+/** ===== SEO (App Router) ===== */
+export const metadata = {
+  title: "About Us | BLORE Agency",
+  description:
+    "Learn about BLORE Agency — where creativity meets technology. We craft branding, web, media, and AI solutions for brands across Egypt & KSA.",
+  alternates: { canonical: "https://www.bloreagency.com/about" },
+  openGraph: {
+    title: "About Us | BLORE Agency",
+    description:
+      "Creativity + Technology. Discover BLORE Agency’s story, mission, values, and leadership team.",
+    url: "https://www.bloreagency.com/about",
+    siteName: "BLORE Agency",
+    type: "website",
+    images: [{ url: "/images/portfolio-blore-motion.png", width: 1200, height: 630, alt: "BLORE Agency Portfolio" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | BLORE Agency",
+    description: "Discover our story, mission, values, and leadership team.",
+    images: ["/images/portfolio-blore-motion.png"],
+  },
+};
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-purple-600 to-cyan-500">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up">About Blore Agency</h1>
-          <p className="text-xl text-white/90 leading-relaxed animate-fade-in-up delay-200">
+      {/* Hero Section (RGB + overlay) */}
+      <section className="pt-32 pb-20 px-4 rgb-animated relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/30 pointer-events-none" aria-hidden="true" />
+        <div className="relative max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">About Blore Agency</h1>
+          <p className="text-xl text-white/90 leading-relaxed">
             We're not just another digital agency. We're creative innovators, strategic thinkers, and technology
             enthusiasts who believe that great design and smart solutions can transform businesses and create lasting
             impact.
@@ -39,35 +63,35 @@ export default function AboutPage() {
               </p>
 
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
                   <span className="text-gray-700">150+ Projects Completed</span>
                 </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
                   <span className="text-gray-700">98% Client Satisfaction</span>
                 </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
                   <span className="text-gray-700">5+ Years Experience</span>
                 </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
                   <span className="text-gray-700">24/7 Support</span>
                 </div>
               </div>
             </div>
-            {/* --- الجزء الذي تم تصحيحه --- */}
+
             <div className="relative w-full h-96">
-                <Image
-                    src="/images/about-us.png" // تأكد من أن الصورة بهذا الاسم موجودة في public/images
-                    alt="About Blore Agency"
-                    fill // الخاصية الجديدة بدلاً من layout="fill"
-                    style={{ objectFit: 'cover' }} // الخاصية الجديدة بدلاً من objectFit="cover"
-                    className="rounded-2xl"
-                />
+              <Image
+                src="/images/about-us.png"      // تأكد من وجود الصورة
+                alt="About Blore Agency"
+                fill
+                className="object-cover rounded-2xl"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
             </div>
-            {/* --- نهاية الجزء المصحح --- */}
           </div>
         </div>
       </section>
@@ -152,12 +176,52 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Leadership (Team) */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Leadership</h2>
+            <p className="text-gray-600">
+              The team that drives our creative strategies and technical excellence.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { n: "Hossam Amer", r: "Chief Executive Officer", img: "/hossam-amer.jpg" },
+              { n: "Mohamed Hassan", r: "Chief Financial Officer", img: "/mohamed-hassan.jpg" },
+              { n: "Anoud Abdullah", r: "Marketing Manager", img: "/anoud-abdullah.jpg" },
+              { n: "Abdo Hendy", r: "Head of Media Department", img: "/abdo-hendy.jpg" },
+            ].map((m) => (
+              <div key={m.n} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-transform duration-300 hover:-translate-y-1 text-center">
+                <div className="relative w-24 h-24 mx-auto mb-4">
+                  <Image
+                    src={m.img}
+                    alt={m.n}
+                    fill
+                    sizes="96px"
+                    className="rounded-full object-cover border-4 border-white shadow"
+                  />
+                </div>
+                <h3 className="font-semibold text-xl text-gray-900">{m.n}</h3>
+                <p className="text-purple-600 text-sm mb-3">{m.r}</p>
+                <p className="text-gray-600 text-sm italic">
+                  “We craft meaningful experiences that connect brands and audiences.”
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* What Makes Us Different */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">What Makes Us Different</h2>
-            <p className="text-xl text-gray-600">Here's what sets us apart in the competitive digital landscape.</p>
+            <p className="text-xl text-gray-600">
+              Here's what sets us apart in the competitive digital landscape.
+            </p>
           </div>
 
           <div className="space-y-8">
@@ -166,7 +230,7 @@ export default function AboutPage() {
               <p className="text-gray-700 text-lg leading-relaxed">
                 From traditional branding to AI-powered marketing tools, we offer a complete suite of services under one
                 roof. This means consistent quality, seamless integration, and a unified vision across all your digital
-                touchpoints, ensuring your brand message remains cohesive.
+                touchpoints.
               </p>
             </div>
 
@@ -174,31 +238,28 @@ export default function AboutPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Future-Ready Solutions</h3>
               <p className="text-gray-700 text-lg leading-relaxed">
                 We don't just solve today's problems – we anticipate tomorrow's opportunities. Our team stays at the
-                forefront of emerging technologies, ensuring your brand remains relevant and competitive in an
-                ever-evolving digital landscape while preparing for future challenges.
+                forefront of emerging technologies to keep your brand competitive.
               </p>
             </div>
 
             <div className="bg-gradient-to-r from-purple-50 to-cyan-50 p-8 rounded-2xl border border-purple-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Proven Track Record</h3>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Our portfolio showcases successful projects across diverse industries, from startups to established
-                enterprises. We've consistently delivered results that not only meet objectives but drive measurable
-                business growth and create lasting impact in the marketplace.
+                Our portfolio showcases successful projects across diverse industries, consistently delivering measurable
+                growth and impact.
               </p>
             </div>
 
             <div className="bg-gradient-to-r from-cyan-50 to-purple-50 p-8 rounded-2xl border border-cyan-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Personalized Approach</h3>
               <p className="text-gray-700 text-lg leading-relaxed">
-                We understand that every business is unique. That's why we take the time to understand your specific
-                challenges, goals, and market position before crafting customized solutions that align perfectly with
-                your brand identity, objectives, and target audience needs.
+                Every business is unique. We tailor strategies to your goals, market, and audience for the best possible
+                outcomes.
               </p>
             </div>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
