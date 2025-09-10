@@ -39,9 +39,6 @@ export const projects: Project[] = [
       "/images/projects/livora-scents-rebranding/11.jpg",
       "/images/projects/livora-scents-rebranding/12.jpg",
       "/images/projects/livora-scents-rebranding/13.jpg",
-      // زوّد بحرّيتك:
-      // "/images/projects/livora-scents-rebranding/4.jpg",
-      // "/images/projects/livora-scents-rebranding/5.jpg",
     ],
     tags: ["Branding", "Rebranding", "Luxury", "Logo"],
     results: "Distinctive luxury identity across digital & print",
@@ -239,6 +236,51 @@ export const projects: Project[] = [
     ],
     tags: ["AI Tools", "Analytics", "Dashboard"],
     results: "60% improvement in ROI",
+  },
+  
+  // المشاريع التي تم إضافتها حديثًا
+  {
+    slug: "ideolingo",
+    title: "Ideolingo",
+    category: "Web & Translation Services",
+    shortDescription: "A comprehensive digital solution for a platform providing professional translation and localization services for various sectors.",
+    fullDescription: [
+      "Developed a custom website tailored for translation services.",
+      "Created a unique brand identity and logo.",
+      "Designed a user-friendly interface for a seamless translation ordering process.",
+    ],
+    image: "/images/ideolingo-project-hero.jpg",
+    gallery: [
+        "/images/projects/ideolingo/1.png",
+        "/images/projects/ideolingo/2.png",
+        "/images/projects/ideolingo/3.png",
+        "/images/projects/ideolingo/4.png",
+        "/images/projects/ideolingo/5.png",
+        "/images/projects/ideolingo/6.png",
+    ],
+    tags: ["Translation", "Localization", "Web Development", "Branding"],
+    results: "Enhanced brand perception and user engagement."
+  },
+  {
+    slug: "alnahda-factory",
+    title: "Al Nahda Factory",
+    category: "E-commerce & Branding",
+    shortDescription: "A modern website and complete visual identity for a factory specializing in high-quality cotton textiles.",
+    fullDescription: [
+      "Designed a responsive e-commerce website.",
+      "Developed a complete visual identity and brand guidelines.",
+      "Integrated product catalog with a focus on high-quality visuals.",
+    ],
+    image: "/images/alnahda-factory-project-hero.jpg",
+    gallery: [
+        "/images/projects/alnahda-factory/1.png",
+        "/images/projects/alnahda-factory/2.png",
+        "/images/projects/alnahda-factory/3.png",
+        "/images/projects/alnahda-factory/4.png",
+        "/images/projects/alnahda-factory/5.png",
+    ],
+    tags: ["E-commerce", "Web Development", "Branding", "Visual Identity"],
+    results: "Streamlined online sales process and boosted brand image."
   },
 ];
 
