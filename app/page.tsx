@@ -4,47 +4,82 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Award, Lightbulb, Quote } from "lucide-react";
 import dynamic from "next/dynamic";
+import React, { useEffect, useState } from 'react'; // 👈 تم إضافة هذه المكتبات
+
+// ✅ Placeholder Component: يُعرض أثناء تحميل VantaJS للحفاظ على الـ layout
+const VantaPlaceholder = ({ children }: { children: React.ReactNode }) => (
+  // استخدمنا min-h-screen و padding لإعادة إنشاء مساحة الـ Hero بدقة
+  <div className="relative w-full min-h-screen bg-gray-900 flex items-center justify-center pt-20 pb-20"> 
+    {children}
+  </div>
+);
 
 // ✅ استيراد مكوّن الخلفية باستخدام alias @/ (يتطلب tsconfig بها baseUrl + paths)
 const VantaBackground = dynamic(() => import("@/components/VantaBackground"), {
   ssr: false,
+  // استخدام الـ Placeholder للحفاظ على الـ layout أثناء التحميل
+  loading: () => <VantaPlaceholder><div className="relative z-10 text-center max-w-5xl mx-auto"></div></VantaPlaceholder>,
 });
 
 export default function HomePage() {
+  const [showVanta, setShowVanta] = useState(false); // 👈 الحالة للتحكم في ظهور Vanta
+
+  useEffect(() => {
+    // تشغيل تحميل Vanta بعد فترة قصيرة (500ms) للسماح للصفحة بالتحميل أولاً
+    const timer = setTimeout(() => {
+      setShowVanta(true);
+    }, 500);
+
+    return () => clearTimeout(timer); // تنظيف المؤقت عند مغادرة المكون
+  }, []);
+
+  // فصل محتوى الـ Hero لجعله متوفرًا داخل VantaBackground و VantaPlaceholder
+  const HeroContent = (
+    <div className="relative z-10 text-center max-w-5xl mx-auto">
+      <div className="mb-8">
+        <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 animate-fade-in-up">
+          BLORE AGENCY
+        </h1>
+        <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full animate-fade-in-up"></div>
+      </div>
+
+      <h2 className="text-3xl md:text-5xl font-light text-white/90 mb-8 animate-fade-in-up delay-200">
+        Where Creativity Meets Technology
+      </h2>
+
+      <p className="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-300">
+        We're a forward-thinking creative digital agency that transforms bold ideas into extraordinary digital
+        experiences. From innovative branding to cutting-edge AI-powered solutions, we craft stories that resonate
+        and technologies that perform.
+      </p>
+
+      <Button
+        asChild
+        size="lg"
+        className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-14 py-8 text-xl rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-500/25 font-semibold animate-fade-in-up delay-400"
+      >
+        <Link href="/contact" className="inline-flex items-center gap-3">
+          Let's Talk
+          <ArrowRight className="w-5 h-5" />
+        </Link>
+      </Button>
+    </div>
+  );
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <VantaBackground>
-        <div className="relative z-10 text-center max-w-5xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 animate-fade-in-up">
-              BLORE AGENCY
-            </h1>
-            <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full animate-fade-in-up"></div>
-          </div>
-
-          <h2 className="text-3xl md:text-5xl font-light text-white/90 mb-8 animate-fade-in-up delay-200">
-            Where Creativity Meets Technology
-          </h2>
-
-          <p className="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-300">
-            We're a forward-thinking creative digital agency that transforms bold ideas into extraordinary digital
-            experiences. From innovative branding to cutting-edge AI-powered solutions, we craft stories that resonate
-            and technologies that perform.
-          </p>
-
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-14 py-8 text-xl rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-500/25 font-semibold animate-fade-in-up delay-400"
-          >
-            <Link href="/contact" className="inline-flex items-center gap-3">
-              Let's Talk
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </Button>
-        </div>
-      </VantaBackground>
+      {/* 👈 سيظهر VantaBackground فقط بعد تأخير 500ms */}
+      {showVanta ? (
+        <VantaBackground>
+          {HeroContent}
+        </VantaBackground>
+      ) : (
+        // 👈 سيظهر Placeholder في البداية للحفاظ على التصميم
+        <VantaPlaceholder>
+          {HeroContent}
+        </VantaPlaceholder>
+      )}
 
       {/* What Makes Us Different Section */}
       <section className="py-20 px-4 bg-white">
