@@ -7,7 +7,9 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    // تم حذف السطر القديم: unoptimized: true,
+    // تم تفعيل الصيغ الحديثة لتحقيق أقصى ضغط تلقائي
+    formats: ['image/webp', 'image/avif'], 
   },
 }
 
