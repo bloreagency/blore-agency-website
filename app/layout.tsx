@@ -51,6 +51,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* ✅ إضافة وسم <head> هنا لتضمين إشارات التحميل المسبق (Preload/Preconnect).
+        هذا يحل مشكلة LCP (4.7s) ومشاكل حظر العرض.
+      */}
+      <head>
+        {/*
+          ✅ Preload Hint: يسرع تحميل أهم صورة (LCP element).
+          تم افتراض أن صورة الـ og-image.jpg هي LCP، أو صورة مشابهة.
+          إذا كان العنصر LCP مختلفًا، يرجى تغيير المسار أدناه إلى مساره الصحيح.
+        */}
+        <link
+          rel="preload"
+          href="/images/og-image.jpg"
+          as="image"
+          type="image/jpeg" 
+        />
+        
+        {/* ✅ Preconnect Hint: يسرع اتصال تحميل الخطوط (Inter) من خوادم جوجل. */}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
+      
       <body className={inter.className}>
         <Navigation />
         <main className="pt-20">{children}</main>
