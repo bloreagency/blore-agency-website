@@ -4,17 +4,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Award, Lightbulb, Quote } from "lucide-react";
 import dynamic from "next/dynamic";
-import React, { useEffect, useState } from 'react'; // 👈 تم إضافة هذه المكتبات
+import React, { useEffect, useState } from 'react';
 
 // ✅ Placeholder Component: يُعرض أثناء تحميل VantaJS للحفاظ على الـ layout
 const VantaPlaceholder = ({ children }: { children: React.ReactNode }) => (
-  // استخدمنا min-h-screen و padding لإعادة إنشاء مساحة الـ Hero بدقة
-  <div className="relative w-full min-h-screen bg-gray-900 flex items-center justify-center pt-20 pb-20"> 
+  // 💡 التعديل: إضافة rgb-animated لمنح الخلفية الثابتة نفس مظهر الخلفية المتحركة
+  <div className="relative w-full min-h-screen bg-gray-900 flex items-center justify-center pt-20 pb-20 rgb-animated"> 
     {children}
   </div>
 );
 
-// ✅ استيراد مكوّن الخلفية باستخدام alias @/ (يتطلب tsconfig بها baseUrl + paths)
+// ✅ استيراد مكوّن الخلفية باستخدام alias @/
 const VantaBackground = dynamic(() => import("@/components/VantaBackground"), {
   ssr: false,
   // استخدام الـ Placeholder للحفاظ على الـ layout أثناء التحميل
@@ -22,15 +22,24 @@ const VantaBackground = dynamic(() => import("@/components/VantaBackground"), {
 });
 
 export default function HomePage() {
-  const [showVanta, setShowVanta] = useState(false); // 👈 الحالة للتحكم في ظهور Vanta
+  // الحالة للتحكم في ظهور Vanta
+  const [showVanta, setShowVanta] = useState(false); 
 
   useEffect(() => {
-    // تشغيل تحميل Vanta بعد فترة قصيرة (500ms) للسماح للصفحة بالتحميل أولاً
-    const timer = setTimeout(() => {
-      setShowVanta(true);
-    }, 500);
+    const handleIdle = () => {
+        setShowVanta(true);
+    };
 
-    return () => clearTimeout(timer); // تنظيف المؤقت عند مغادرة المكون
+    // 💡 التعديل: تأخير كبير (3 ثوانٍ) أو استخدام requestIdleCallback لحل TBT على الديسك توب
+    if (window.requestIdleCallback) {
+        // حمّل Vanta عندما يصبح المتصفح خاملاً (مثالي للأداء)
+        const idleHandle = window.requestIdleCallback(handleIdle, { timeout: 3000 });
+        return () => window.cancelIdleCallback(idleHandle);
+    } else {
+        // كبديل، حمّل Vanta بعد 3 ثوانٍ (لإعطاء وقت كافٍ لإنهاء الـ TBT)
+        const timer = setTimeout(handleIdle, 3000); 
+        return () => clearTimeout(timer);
+    }
   }, []);
 
   // فصل محتوى الـ Hero لجعله متوفرًا داخل VantaBackground و VantaPlaceholder
@@ -69,13 +78,13 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      {/* 👈 سيظهر VantaBackground فقط بعد تأخير 500ms */}
+      {/* سيظهر VantaBackground فقط بعد تأخير كبير (3 ثوانٍ) */}
       {showVanta ? (
         <VantaBackground>
           {HeroContent}
         </VantaBackground>
       ) : (
-        // 👈 سيظهر Placeholder في البداية للحفاظ على التصميم
+        // سيظهر Placeholder في البداية للحفاظ على التصميم
         <VantaPlaceholder>
           {HeroContent}
         </VantaPlaceholder>
