@@ -12,6 +12,22 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'No file provided' }, { status: 400 });
         }
 
+        // Validate file type
+        const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+        if (!allowedTypes.includes(file.type)) {
+            return NextResponse.json({
+                error: `نوع الملف غير مدعوم. الأنواع المدعومة: ${allowedTypes.join(', ')}`
+            }, { status: 400 });
+        }
+
+        // Validate file size (max 10MB)
+        const maxSize = 10 * 1024 * 1024; // 10MB
+        if (file.size > maxSize) {
+            return NextResponse.json({
+                error: 'حجم الملف كبير جداً. الحد الأقصى: 10MB'
+            }, { status: 400 });
+        }
+
         // Convert file to buffer
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
@@ -26,7 +42,8 @@ export async function POST(request: NextRequest) {
         try {
             await mkdir(uploadDir, { recursive: true });
         } catch (error) {
-            // Directory might already exist
+            console.error('Error creating directory:', error);
+            // Directory might already exist, continue
         }
 
         // Save file
@@ -43,6 +60,10 @@ export async function POST(request: NextRequest) {
         });
     } catch (error) {
         console.error('Error uploading file:', error);
-        return NextResponse.json({ error: 'Failed to upload file' }, { status: 500 });
+        const errorMessage = error instanceof Error ? error.message : 'Failed to upload file';
+        return NextResponse.json({
+            error: errorMessage,
+            details: process.env.NODE_ENV === 'development' ? String(error) : undefined
+        }, { status: 500 });
     }
 }

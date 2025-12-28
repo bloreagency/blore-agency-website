@@ -80,20 +80,29 @@ export default function AdminProjectsPage() {
                 body: formData,
             });
 
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+                console.error('Upload failed:', errorData);
+                setNotification({ type: 'error', message: `فشل رفع الصورة: ${errorData.error || 'خطأ غير معروف'}` });
+                return;
+            }
+
             const data = await response.json();
 
-            if (data.success) {
+            if (data.success && data.url) {
                 if (isMainImage) {
                     setFormData(prev => ({ ...prev, image: data.url }));
                 } else {
                     setFormData(prev => ({ ...prev, images: [...prev.images, data.url] }));
                 }
-                setNotification({ type: 'success', message: 'تم رفع الصورة بنجاح!' });
+                setNotification({ type: 'success', message: '✅ تم رفع الصورة بنجاح!' });
             } else {
-                setNotification({ type: 'error', message: 'فشل رفع الصورة!' });
+                console.error('Invalid response:', data);
+                setNotification({ type: 'error', message: 'فشل رفع الصورة: استجابة غير صالحة' });
             }
         } catch (error) {
-            setNotification({ type: 'error', message: 'حدث خطأ أثناء رفع الصورة!' });
+            console.error('Upload error:', error);
+            setNotification({ type: 'error', message: `حدث خطأ أثناء رفع الصورة: ${error instanceof Error ? error.message : 'خطأ غير معروف'}` });
         } finally {
             setUploadingImage(false);
         }
