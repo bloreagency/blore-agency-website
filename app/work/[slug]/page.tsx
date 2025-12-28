@@ -1,11 +1,13 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getProjectBySlug, projects } from "@/lib/projects";
+import { ArrowLeft } from "lucide-react";
+import { getProjectBySlug, getAllProjectSlugs } from "@/lib/projects";
 
 /** ===== SEO ديناميكي ===== */
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) return { title: "Project Not Found | BLORE Agency" };
 
   const url = `https://www.bloreagency.com/work/${project.slug}`;
@@ -33,16 +35,20 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 /** (اختياري) توليد مسبق للصفحات */
-export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  const slugs = getAllProjectSlugs()
+  return slugs.map((slug) => ({
+    slug: slug,
+  }))
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) return notFound();
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-gray-950">
       {/* Hero — RGB + overlay */}
       <section className="pt-32 pb-16 px-4 rgb-animated relative overflow-hidden">
         <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
@@ -60,14 +66,18 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Overview */}
-      <section className="py-12 px-4 bg-white">
+      <section className="py-12 px-4 bg-gray-950">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Overview</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
-              {project.fullDescription.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
+            <h2 className="text-2xl font-bold text-white mb-4">Overview</h2>
+            <div className="space-y-4 text-gray-300 leading-relaxed">
+              {project.fullDescription && project.fullDescription.length > 0 ? (
+                project.fullDescription.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))
+              ) : (
+                <p>{project.description}</p>
+              )}
             </div>
 
             {/* Tags */}
@@ -75,7 +85,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 bg-gradient-to-r from-purple-100 to-cyan-100 text-purple-700 text-sm rounded-full"
+                  className="px-3 py-1 bg-gradient-to-r from-purple-900/50 to-cyan-900/50 text-purple-300 text-sm rounded-full border border-purple-700/30"
                 >
                   {tag}
                 </span>
@@ -83,17 +93,24 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </div>
           </div>
 
-          <aside className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-2xl border border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+          <aside className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 p-6 rounded-2xl border border-gray-700">
+            <h3 className="text-lg font-semibold text-white mb-3">
               Project Highlights
             </h3>
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-gray-300">
               <li>
                 <strong>Category:</strong> {project.category}
               </li>
               {project.results && (
                 <li>
-                  <strong>Results:</strong> {project.results}
+                  <strong>Results:</strong>
+                  <ul className="mt-2 space-y-1">
+                    {Object.entries(project.results).map(([key, value]) => (
+                      <li key={key} className="text-sm">
+                        {key}: {value}
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               )}
             </ul>
@@ -110,29 +127,37 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Gallery */}
-      <section className="py-12 px-4 bg-white">
+      <section className="py-12 px-4 bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Gallery</h2>
-          {project.gallery.length === 0 ? (
-            <p className="text-gray-600">Gallery will be added soon.</p>
-          ) : (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {project.gallery.map((src, idx) => (
-                <div
-                  key={idx}
-                  className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl border border-gray-200"
-                >
-                  <Image
-                    src={src}
-                    alt={`${project.title} image ${idx + 1}`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          )}
+          <h2 className="text-2xl font-bold text-white mb-6">Gallery</h2>
+          {/* Gallery */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {(project.gallery || project.images || []).map((img, idx) => (
+              <div key={idx} className="relative aspect-video rounded-xl overflow-hidden">
+                <Image
+                  src={img}
+                  alt={`${project.title} image ${idx + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Description */}
+          <div className="prose prose-invert max-w-none">
+            {project.fullDescription && project.fullDescription.length > 0 ? (
+              project.fullDescription.map((para, idx) => (
+                <p key={idx} className="text-gray-300 text-lg leading-relaxed mb-4">
+                  {para}
+                </p>
+              ))
+            ) : (
+              <p className="text-gray-300 text-lg leading-relaxed">
+                {project.description}
+              </p>
+            )}
+          </div>
         </div>
       </section>
 

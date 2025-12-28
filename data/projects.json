@@ -1,0 +1,414 @@
+[
+    {
+        "id": "1",
+        "slug": "livora-scents-rebranding",
+        "title": "Livora Scents - Luxury Rebranding",
+        "category": "Branding & Identity",
+        "shortDescription": "Complete brand transformation for a premium fragrance company in Saudi Arabia.",
+        "description": "Livora Scents approached us to elevate their brand identity to match their premium product line. We created a sophisticated visual language that reflects luxury and elegance.",
+        "client": "Livora Scents",
+        "year": "2023",
+        "location": "Egypt",
+        "services": [
+            "Brand Strategy",
+            "Logo Design",
+            "Packaging Design",
+            "Marketing Materials"
+        ],
+        "image": "/images/projects/livora-scents-rebranding/1.jpg",
+        "images": [
+            "/images/projects/livora-scents-rebranding/1.jpg",
+            "/images/projects/livora-scents-rebranding/2.jpg",
+            "/images/projects/livora-scents-rebranding/3.jpg",
+            "/images/projects/livora-scents-rebranding/4.jpg",
+            "/images/projects/livora-scents-rebranding/5.jpg",
+            "/images/projects/livora-scents-rebranding/6.jpg"
+        ],
+        "tags": [
+            "Branding",
+            "Luxury",
+            "Saudi Arabia"
+        ],
+        "featured": true,
+        "results": {
+            "brandAwareness": "+150%",
+            "salesIncrease": "+85%",
+            "socialEngagement": "+200%"
+        }
+    },
+    {
+        "id": "2",
+        "slug": "qatrat-al-nada-medical",
+        "title": "Qatrat Al-Nada Medical Services",
+        "category": "Healthcare Branding",
+        "shortDescription": "Modern healthcare branding for a leading medical services provider.",
+        "description": "A comprehensive branding project for Qatrat Al-Nada Medical Services, creating a trustworthy and modern identity.",
+        "client": "Qatrat Al-Nada",
+        "year": "2023",
+        "location": "Egypt",
+        "services": [
+            "Brand Identity",
+            "Website Design",
+            "Marketing Strategy"
+        ],
+        "image": "/images/projects/qatrat-al-nada-medical-services/1.jpg",
+        "images": [
+            "/images/projects/qatrat-al-nada-medical-services/1.jpg",
+            "/images/projects/qatrat-al-nada-medical-services/2.jpg",
+            "/images/projects/qatrat-al-nada-medical-services/3.jpg",
+            "/images/projects/qatrat-al-nada-medical-services/4.jpg",
+            "/images/projects/qatrat-al-nada-medical-services/5.jpg"
+        ],
+        "tags": [
+            "Healthcare",
+            "Branding",
+            "Web Design"
+        ],
+        "featured": true,
+        "results": {
+            "patientInquiries": "+120%",
+            "websiteTraffic": "+180%",
+            "trustScore": "+95%"
+        }
+    },
+    {
+        "id": "3",
+        "slug": "thiqa-medical-services",
+        "title": "Thiqa Medical Services",
+        "category": "Medical Branding",
+        "shortDescription": "Professional medical branding with focus on trust and reliability.",
+        "description": "Created a comprehensive brand identity for Thiqa Medical Services that emphasizes professionalism and patient care.",
+        "client": "Thiqa Medical",
+        "year": "2024",
+        "location": "Egypt",
+        "services": [
+            "Branding",
+            "Digital Marketing",
+            "Content Creation"
+        ],
+        "image": "/images/projects/thiqa-medical-services/1.jpg",
+        "images": [
+            "/images/projects/thiqa-medical-services/1.jpg",
+            "/images/projects/thiqa-medical-services/2.jpg",
+            "/images/projects/thiqa-medical-services/3.jpg",
+            "/images/projects/thiqa-medical-services/4.jpg",
+            "/images/projects/thiqa-medical-services/5.jpg"
+        ],
+        "tags": [
+            "Medical",
+            "Branding",
+            "Egypt"
+        ],
+        "featured": false,
+        "results": {
+            "brandRecognition": "+140%",
+            "appointmentBookings": "+90%"
+        }
+    },
+    {
+        "id": "5",
+        "slug": "ai-marketing-dashboard",
+        "title": "AI Marketing Dashboard",
+        "category": "AI & Technology",
+        "shortDescription": "Advanced AI-powered marketing analytics platform for data-driven decision making.",
+        "description": "Developed a comprehensive AI marketing dashboard that provides real-time insights, predictive analytics, and automated reporting for marketing teams.",
+        "client": "TechVision",
+        "year": "2024",
+        "location": "UAE",
+        "services": [
+            "AI Development",
+            "Dashboard Design",
+            "Data Visualization",
+            "UX/UI Design"
+        ],
+        "image": "/images/projects/ai-marketing-dashboard/1.jpg",
+        "images": [
+            "/images/projects/ai-marketing-dashboard/1.jpg",
+            "/images/projects/ai-marketing-dashboard/2.jpg",
+            "/images/projects/ai-marketing-dashboard/3.jpg"
+        ],
+        "tags": [
+            "AI",
+            "Dashboard",
+            "Analytics",
+            "Technology"
+        ],
+        "featured": true,
+        "results": {
+            "efficiency": "+200%",
+            "dataAccuracy": "+95%",
+            "timeReduction": "-60%"
+        }
+    },
+    {
+        "id": "6",
+        "slug": "fittrack-mobile-app",
+        "title": "FitTrack - Fitness Mobile App",
+        "category": "Mobile App Development",
+        "shortDescription": "Comprehensive fitness tracking app with AI-powered workout recommendations.",
+        "description": "Created a modern fitness application that helps users track workouts, nutrition, and progress with personalized AI recommendations.",
+        "client": "FitTrack Inc",
+        "year": "2024",
+        "location": "Egypt",
+        "services": [
+            "Mobile App Development",
+            "UI/UX Design",
+            "AI Integration",
+            "Backend Development"
+        ],
+        "image": "/images/projects/fittrack-mobile-app/1.jpg",
+        "images": [
+            "/images/projects/fittrack-mobile-app/1.jpg",
+            "/images/projects/fittrack-mobile-app/2.jpg",
+            "/images/projects/fittrack-mobile-app/3.jpg",
+            "/images/projects/fittrack-mobile-app/4.jpg"
+        ],
+        "tags": [
+            "Mobile App",
+            "Fitness",
+            "Health",
+            "AI"
+        ],
+        "featured": true,
+        "results": {
+            "downloads": "100K+",
+            "rating": "4.9/5",
+            "userRetention": "+85%"
+        }
+    },
+    {
+        "id": "7",
+        "slug": "ecommerce-platform-redesign",
+        "title": "E-Commerce Platform Redesign",
+        "category": "Web Development",
+        "shortDescription": "Modern e-commerce platform with seamless shopping experience and advanced features.",
+        "description": "Complete redesign of an e-commerce platform focusing on user experience, conversion optimization, and mobile-first design.",
+        "client": "ShopHub",
+        "year": "2024",
+        "location": "Egypt",
+        "services": [
+            "Web Development",
+            "UX/UI Design",
+            "E-Commerce Solutions",
+            "Payment Integration"
+        ],
+        "image": "/images/projects/ecommerce-platform-redesign/1.jpg",
+        "images": [
+            "/images/projects/ecommerce-platform-redesign/1.jpg",
+            "/images/projects/ecommerce-platform-redesign/2.jpg",
+            "/images/projects/ecommerce-platform-redesign/3.jpg",
+            "/images/projects/ecommerce-platform-redesign/4.jpg"
+        ],
+        "tags": [
+            "E-Commerce",
+            "Web Design",
+            "UX/UI",
+            "Development"
+        ],
+        "featured": true,
+        "results": {
+            "conversionRate": "+150%",
+            "sales": "+180%",
+            "cartAbandonment": "-45%"
+        }
+    },
+    {
+        "id": "8",
+        "slug": "blore-motion-graphics",
+        "title": "BLORE Motion Graphics Showreel",
+        "category": "Motion Graphics",
+        "shortDescription": "Dynamic motion graphics and animation portfolio showcasing creative excellence.",
+        "description": "A collection of stunning motion graphics projects demonstrating our expertise in animation, visual effects, and creative storytelling.",
+        "client": "BLORE Agency",
+        "year": "2024",
+        "location": "Egypt",
+        "services": [
+            "Motion Graphics",
+            "Animation",
+            "Visual Effects",
+            "Video Production"
+        ],
+        "image": "/images/projects/blore-motion-graphics/1.jpg",
+        "images": [
+            "/images/projects/blore-motion-graphics/1.jpg",
+            "/images/projects/blore-motion-graphics/2.jpg",
+            "/images/projects/blore-motion-graphics/3.jpg",
+            "/images/projects/blore-motion-graphics/4.jpg",
+            "/images/projects/blore-motion-graphics/5.jpg"
+        ],
+        "tags": [
+            "Motion Graphics",
+            "Animation",
+            "Video",
+            "Creative"
+        ],
+        "featured": true,
+        "results": {
+            "viewCount": "500K+",
+            "engagement": "+250%",
+            "clientSatisfaction": "100%"
+        }
+    },
+    {
+        "id": "9",
+        "slug": "social-growth-strategy",
+        "title": "Social Media Growth Strategy",
+        "category": "Social Media Marketing",
+        "shortDescription": "Comprehensive social media strategy delivering exceptional growth and engagement.",
+        "description": "Developed and executed a data-driven social media strategy that significantly increased brand awareness and audience engagement.",
+        "client": "GrowthHub",
+        "year": "2023",
+        "location": "UAE",
+        "services": [
+            "Social Media Strategy",
+            "Content Creation",
+            "Community Management",
+            "Analytics"
+        ],
+        "image": "/images/projects/social-growth-strategy/1.jpg",
+        "images": [
+            "/images/projects/social-growth-strategy/1.jpg",
+            "/images/projects/social-growth-strategy/2.jpg",
+            "/images/projects/social-growth-strategy/3.jpg"
+        ],
+        "tags": [
+            "Social Media",
+            "Marketing",
+            "Growth",
+            "Strategy"
+        ],
+        "featured": false,
+        "results": {
+            "followerGrowth": "+300%",
+            "engagement": "+220%",
+            "reach": "+400%"
+        }
+    },
+    {
+        "id": "10",
+        "slug": "techstart-complete-rebrand",
+        "title": "TechStart Complete Rebrand",
+        "category": "Branding & Identity",
+        "shortDescription": "Full brand transformation for a leading technology startup.",
+        "description": "Complete rebranding project including logo design, brand guidelines, marketing materials, and digital presence for a tech startup.",
+        "client": "TechStart",
+        "year": "2023",
+        "location": "Egypt",
+        "services": [
+            "Brand Strategy",
+            "Logo Design",
+            "Brand Guidelines",
+            "Marketing Materials"
+        ],
+        "image": "/images/projects/techstart-complete-rebrand/1.jpg",
+        "images": [
+            "/images/projects/techstart-complete-rebrand/1.jpg",
+            "/images/projects/techstart-complete-rebrand/2.jpg",
+            "/images/projects/techstart-complete-rebrand/3.jpg",
+            "/images/projects/techstart-complete-rebrand/4.jpg"
+        ],
+        "tags": [
+            "Branding",
+            "Technology",
+            "Startup",
+            "Design"
+        ],
+        "featured": false,
+        "results": {
+            "brandRecognition": "+180%",
+            "marketShare": "+65%",
+            "customerTrust": "+140%"
+        }
+    },
+    {
+        "id": "11",
+        "slug": "alnahda-factory",
+        "title": "AlNahda Factory",
+        "category": "Industrial Branding",
+        "shortDescription": "Professional branding and digital presence for manufacturing excellence.",
+        "description": "Comprehensive branding project for AlNahda Factory, creating a modern identity that reflects their commitment to quality and innovation.",
+        "client": "AlNahda Factory",
+        "year": "2023",
+        "location": "Egypt",
+        "services": [
+            "Branding",
+            "Website Design",
+            "Marketing Strategy",
+            "Photography"
+        ],
+        "image": "/images/alnahda-factory-project-hero.jpg",
+        "images": [
+            "/images/alnahda-factory-project-hero.jpg"
+        ],
+        "tags": [
+            "Industrial",
+            "Branding",
+            "Manufacturing",
+            "B2B"
+        ],
+        "featured": false,
+        "results": {
+            "leadGeneration": "+120%",
+            "websiteTraffic": "+160%",
+            "brandAwareness": "+95%"
+        }
+    },
+    {
+        "id": "12",
+        "slug": "ideolingo",
+        "title": "IdeoLingo - Language Learning Platform",
+        "category": "EdTech Platform",
+        "shortDescription": "Innovative language learning platform with AI-powered personalization.",
+        "description": "Developed a comprehensive language learning platform that uses AI to personalize learning paths and provide interactive lessons.",
+        "client": "IdeoLingo",
+        "year": "2024",
+        "location": "Egypt",
+        "services": [
+            "Platform Development",
+            "AI Integration",
+            "UX/UI Design",
+            "Content Management"
+        ],
+        "image": "/images/ideolingo-project-hero.jpg",
+        "images": [
+            "/images/ideolingo-project-hero.jpg"
+        ],
+        "tags": [
+            "EdTech",
+            "AI",
+            "Education",
+            "Platform"
+        ],
+        "featured": false,
+        "results": {
+            "activeUsers": "50K+",
+            "completionRate": "+75%",
+            "userSatisfaction": "4.7/5"
+        }
+    },
+    {
+        "slug": "mehtag-masr",
+        "title": "محتاج مصر - Mehtag Masr",
+        "category": "E-commers",
+        "shortDescription": "E-commers",
+        "description": "mehtagmasr is a company specializing in providing all home services with high professionalism, including renovations, installations, drilling, silicone work, and grouting, while adhering to the finest techniques and applying the latest technologies to execute work perfectly and according to the best practices.",
+        "client": " Mehtag Masr",
+        "year": "2025",
+        "location": "egypt",
+        "services": [
+            "E-commers"
+        ],
+        "image": "/images/projects/1766908740618-mtag1.jpg.png",
+        "images": [
+            "/images/projects/1766909000268-mtag4.jpg.png",
+            "/images/projects/1766909000279-mtag3.jpg.png",
+            "/images/projects/1766909000316-mtag2.jpg.png",
+            "/images/projects/1766909000320-mtag1.jpg.png"
+        ],
+        "tags": [
+            "branding"
+        ],
+        "featured": false,
+        "id": "13"
+    }
+]

@@ -8,6 +8,301 @@
     "lets_talk": "Let's Talk"
   },
   "footer": {
-    "description": "Where creativity meets technology. We craft digital experiences that inspire, engage, and drive measurable results for businesses worldwide."
+    "description": "Where creativity meets technology. We craft digital experiences that inspire, engage, and drive measurable results for businesses worldwide.",
+    "quick_links": "Quick Links",
+    "services": "Services",
+    "contact_info": "Contact Info",
+    "ready_to_start": "Ready to Start?",
+    "lets_discuss": "Let's discuss your project today.",
+    "get_in_touch": "Get in Touch",
+    "all_rights": "All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "title": "BLORE AGENCY",
+      "subtitle": "Where Creativity Meets Technology",
+      "description": "We're a forward-thinking creative digital agency that transforms bold ideas into extraordinary digital experiences. From innovative branding to cutting-edge AI-powered solutions, we craft stories that resonate and technologies that perform.",
+      "cta": "Let's Talk"
+    },
+    "features": {
+      "title": "What Makes Us Different",
+      "subtitle": "We combine creative excellence with cutting-edge technology to deliver results that exceed expectations.",
+      "innovation": {
+        "title": "Innovation First",
+        "desc": "We stay ahead of trends and leverage the latest technologies to give your brand a competitive edge."
+      },
+      "client": {
+        "title": "Client-Centric",
+        "desc": "Your success is our priority. We work closely with you to ensure exceptional results that align with your vision."
+      },
+      "results": {
+        "title": "Proven Results",
+        "desc": "Our portfolio speaks for itself. We've helped countless brands achieve their digital goals."
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "We offer a full suite of digital services designed to elevate your brand and grow your business."
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "subtitle": "Hear directly from the businesses we've helped grow."
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Blore Agency",
+      "subtitle": "We're not just another digital agency. We're creative innovators, strategic thinkers, and technology enthusiasts who believe that great design and smart solutions can transform businesses and create lasting impact."
+    },
+    "who_we_are": {
+      "title": "Who We Are",
+      "desc1": "Founded on the principle that creativity and technology should work in perfect harmony, Blore Agency has established itself as a leading creative digital agency. We're a passionate team of designers, developers, strategists, and innovators who live and breathe digital excellence.",
+      "desc2": "Our diverse expertise spans from traditional branding and graphic design to cutting-edge AI-powered marketing tools. We don't just follow trends – we set them, constantly pushing the boundaries of what's possible in the digital realm.",
+      "desc3": "Every project we undertake is an opportunity to create something extraordinary, something that not only meets our clients' objectives but exceeds their wildest expectations and drives measurable business growth."
+    },
+    "stats": {
+      "projects": "150+ Projects Completed",
+      "satisfaction": "98% Client Satisfaction",
+      "experience": "5+ Years Experience",
+      "support": "24/7 Support"
+    },
+    "values": {
+      "title": "What We Stand For",
+      "subtitle": "Our core values guide everything we do and shape how we work with our clients and each other.",
+      "passion": {
+        "title": "Passion",
+        "desc": "We pour our hearts into every project, treating your vision as our own and your success as our ultimate mission and driving force."
+      },
+      "vision": {
+        "title": "Vision",
+        "desc": "We see beyond the present, anticipating future trends and technologies to keep your brand ahead of the curve and competitive."
+      },
+      "precision": {
+        "title": "Precision",
+        "desc": "Every pixel, every line of code, every strategy is crafted with meticulous attention to detail and strategic purpose."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "desc": "We embrace new technologies and creative approaches, constantly pushing boundaries to deliver breakthrough solutions."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "desc": "We believe the best results come from true partnership, working closely with clients as an extension of their team."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "desc": "We build lasting relationships through honest communication, transparent processes, and reliable delivery on our promises."
+      }
+    },
+    "leadership": {
+      "title": "Leadership",
+      "subtitle": "The team that drives our creative strategies and technical excellence.",
+      "quote": "We craft meaningful experiences that connect brands and audiences."
+    },
+    "different": {
+      "title": "What Makes Us Different",
+      "subtitle": "Here's what sets us apart in the competitive digital landscape.",
+      "expertise": {
+        "title": "Comprehensive Expertise",
+        "desc": "From traditional branding to AI-powered marketing tools, we offer a complete suite of services under one roof. This means consistent quality, seamless integration, and a unified vision across all your digital touchpoints."
+      },
+      "future": {
+        "title": "Future-Ready Solutions",
+        "desc": "We don't just solve today's problems – we anticipate tomorrow's opportunities. Our team stays at the forefront of emerging technologies to keep your brand competitive."
+      },
+      "track": {
+        "title": "Proven Track Record",
+        "desc": "Our portfolio showcases successful projects across diverse industries, consistently delivering measurable growth and impact."
+      },
+      "personalized": {
+        "title": "Personalized Approach",
+        "desc": "Every business is unique. We tailor strategies to your goals, market, and audience for the best possible outcomes."
+      }
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Our Services",
+      "subtitle": "From creative branding to AI-powered marketing solutions, we provide comprehensive digital services that drive results and exceed expectations. Discover how we can transform your vision into reality."
+    },
+    "branding": {
+      "title": "Branding & Graphic Design",
+      "description": "Complete brand identity systems that capture your essence and create lasting impressions in the market.",
+      "features": [
+        "Logo Design & Brand Identity",
+        "Brand Guidelines & Style Guides",
+        "Print & Digital Collateral",
+        "Packaging Design",
+        "Brand Strategy & Positioning",
+        "Visual Identity Systems"
+      ]
+    },
+    "web": {
+      "title": "Web Design & Development",
+      "description": "Custom websites and web applications built with cutting-edge technology and stunning, responsive design.",
+      "features": [
+        "Responsive Web Design",
+        "E-commerce Solutions",
+        "CMS Development",
+        "Web Applications",
+        "Performance Optimization",
+        "SEO Implementation"
+      ]
+    },
+    "mobile": {
+      "title": "Mobile Applications",
+      "description": "Native and cross-platform mobile apps that deliver exceptional user experiences across all devices.",
+      "features": [
+        "iOS App Development",
+        "Android App Development",
+        "Cross-Platform Solutions",
+        "UI/UX Design",
+        "App Store Optimization",
+        "Maintenance & Support"
+      ]
+    },
+    "motion": {
+      "title": "Motion Graphics & Video Editing",
+      "description": "Compelling visual storytelling through professional motion graphics and video production services.",
+      "features": [
+        "Motion Graphics Design",
+        "Video Editing & Post-Production",
+        "Animation & Visual Effects",
+        "Brand Video Content",
+        "Social Media Videos",
+        "Explainer Videos"
+      ]
+    },
+    "social": {
+      "title": "Social Media Marketing",
+      "description": "Strategic social media campaigns that build communities, drive engagement, and increase brand awareness.",
+      "features": [
+        "Social Media Strategy",
+        "Content Creation & Curation",
+        "Community Management",
+        "Paid Social Advertising",
+        "Analytics & Reporting",
+        "Influencer Marketing"
+      ]
+    },
+    "ai": {
+      "title": "AI-Powered Marketing Tools",
+      "description": "Leverage artificial intelligence to optimize your marketing efforts and gain competitive advantages in the market.",
+      "features": [
+        "AI Content Generation",
+        "Predictive Analytics",
+        "Automated Campaign Optimization",
+        "Chatbot Development",
+        "Machine Learning Insights",
+        "Personalization Engines"
+      ]
+    },
+    "cyber": {
+      "title": "Cyber Security",
+      "description": "Protect your digital assets with comprehensive security solutions and threat prevention.",
+      "features": [
+        "Security Audits & Assessments",
+        "Penetration Testing",
+        "Vulnerability Management",
+        "Security Monitoring & Response",
+        "Data Protection & Encryption",
+        "Compliance & Risk Management"
+      ]
+    },
+    "process": {
+      "title": "Our Process",
+      "subtitle": "We follow a proven methodology that ensures every project is delivered on time, on budget, and exceeds your expectations.",
+      "step1": {
+        "title": "Discovery & Strategy",
+        "desc": "We dive deep into your business, goals, and target audience to understand your unique needs and develop a comprehensive strategy."
+      },
+      "step2": {
+        "title": "Creative Development",
+        "desc": "Our creative team brings your vision to life with innovative designs and concepts that align with your brand identity and objectives."
+      },
+      "step3": {
+        "title": "Implementation",
+        "desc": "We execute the strategy with precision, utilizing the latest technologies and best practices to deliver exceptional results."
+      },
+      "step4": {
+        "title": "Launch & Optimize",
+        "desc": "We ensure a smooth launch and provide ongoing optimization and support to maximize your success and ROI."
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "subtitle": "Let's discuss your project and explore how our services can help you achieve your digital goals.",
+      "button": "Let's Talk"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Let's Talk",
+      "subtitle": "Ready to bring your vision to life? We'd love to hear about your project and explore how we can help you achieve your digital goals. Get in touch with us today and let's start creating something amazing together!"
+    },
+    "form": {
+      "title": "Send us a Message",
+      "name": "Full Name",
+      "email": "Email Address",
+      "company": "Company",
+      "phone": "Phone Number",
+      "service": "Service Interest",
+      "budget": "Budget Range",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully!",
+      "error": "An error occurred. Please try again."
+    },
+    "info": {
+      "title": "Get in Touch",
+      "subtitle": "Whether you have a specific project in mind or just want to explore possibilities, we're here to help. Reach out through any of the channels below and let's start a conversation about your digital goals and how we can help you achieve them.",
+      "email": "Email",
+      "phone": "Phone",
+      "whatsapp": "Let's Chat",
+      "whatsapp_desc": "We respond within 24 hours",
+      "address": "Address",
+      "address_value": "23 Abbas El-Akkad St., Nasr City, Cairo, Egypt"
+    },
+    "social": {
+      "title": "Follow Us"
+    },
+    "hours": {
+      "title": "Response Time & Working Hours",
+      "email": "Email:",
+      "email_value": "Within 24 hours",
+      "working": "Working Hours:",
+      "working_value": "Saturday – Thursday, 9:00 AM – 6:00 PM (GMT+2)",
+      "consultation": "Project Consultation:",
+      "consultation_value": "Same day response for urgent inquiries"
+    },
+    "next": {
+      "title": "What Happens Next?",
+      "step1": "We'll review your message and respond within 24 hours",
+      "step2": "Schedule a consultation call to discuss your project in detail",
+      "step3": "Receive a customized proposal tailored to your needs and budget"
+    }
+  },
+  "work": {
+    "hero": {
+      "title": "Our Work",
+      "subtitle": "Explore our portfolio of successful projects across various industries."
+    },
+    "clients": {
+      "title": "Our Trusted Clients"
+    },
+    "leadership": {
+      "title": "Meet Our Leadership",
+      "subtitle": "The driving force behind our creative solutions and successful strategies.",
+      "ceo_quote": "Our vision is to merge technology and creativity to build digital legacies for our clients.",
+      "cfo_quote": "Driving sustainable growth and financial excellence to empower our creative endeavors.",
+      "marketing_quote": "We craft compelling narratives that connect brands with their audiences in meaningful ways.",
+      "media_quote": "Leading media innovation with creativity and impactful storytelling."
+    },
+    "cta": {
+      "title": "Ready to Transform Your Brand?",
+      "subtitle": "Let's discuss your project and explore how we can help bring your vision to life.",
+      "button": "Start Your Project"
+    }
   }
 }

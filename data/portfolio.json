@@ -1,0 +1,120 @@
+[
+    {
+        "id": 1,
+        "title": "E-Commerce Platform",
+        "titleAr": "منصة تجارة إلكترونية",
+        "slug": "ecommerce-platform",
+        "category": "web",
+        "client": "TechMart",
+        "year": "2024",
+        "description": "A modern e-commerce platform with AI-powered recommendations and seamless checkout experience.",
+        "descriptionAr": "منصة تجارة إلكترونية حديثة مع توصيات مدعومة بالذكاء الاصطناعي وتجربة دفع سلسة.",
+        "image": "/images/portfolio/ecommerce-1.jpg",
+        "images": [
+            "/images/portfolio/ecommerce-1.jpg",
+            "/images/portfolio/ecommerce-2.jpg",
+            "/images/portfolio/ecommerce-3.jpg"
+        ],
+        "technologies": [
+            "Next.js",
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Stripe"
+        ],
+        "features": [
+            "AI Product Recommendations",
+            "Real-time Inventory",
+            "Multi-currency Support",
+            "Advanced Analytics"
+        ],
+        "results": {
+            "conversion": "+45%",
+            "revenue": "+120%",
+            "pageSpeed": "95/100"
+        },
+        "testimonial": {
+            "text": "Blore Agency transformed our online presence. Sales increased by 120% in just 3 months!",
+            "author": "John Smith",
+            "position": "CEO, TechMart"
+        },
+        "link": "https://techmart-demo.com"
+    },
+    {
+        "id": 2,
+        "title": "Mobile Banking App",
+        "titleAr": "تطبيق بنكي للموبايل",
+        "slug": "mobile-banking-app",
+        "category": "mobile",
+        "client": "FinanceHub",
+        "year": "2024",
+        "description": "Secure and intuitive mobile banking application with biometric authentication.",
+        "descriptionAr": "تطبيق بنكي آمن وسهل الاستخدام مع مصادقة بيومترية.",
+        "image": "/images/portfolio/banking-1.jpg",
+        "images": [
+            "/images/portfolio/banking-1.jpg",
+            "/images/portfolio/banking-2.jpg",
+            "/images/portfolio/banking-3.jpg"
+        ],
+        "technologies": [
+            "React Native",
+            "TypeScript",
+            "Firebase",
+            "Plaid API"
+        ],
+        "features": [
+            "Biometric Login",
+            "Instant Transfers",
+            "Bill Payments",
+            "Investment Tracking"
+        ],
+        "results": {
+            "users": "50K+",
+            "rating": "4.8/5",
+            "downloads": "100K+"
+        },
+        "testimonial": {
+            "text": "The app exceeded our expectations. User engagement is through the roof!",
+            "author": "Sarah Johnson",
+            "position": "Product Manager, FinanceHub"
+        }
+    },
+    {
+        "id": 3,
+        "title": "Brand Identity Design",
+        "titleAr": "تصميم هوية تجارية",
+        "slug": "brand-identity-design",
+        "category": "branding",
+        "client": "GreenLeaf Organic",
+        "year": "2023",
+        "description": "Complete brand identity system for an organic food company.",
+        "descriptionAr": "نظام هوية تجارية كامل لشركة أغذية عضوية.",
+        "image": "/images/portfolio/branding-1.jpg",
+        "images": [
+            "/images/portfolio/branding-1.jpg",
+            "/images/portfolio/branding-2.jpg",
+            "/images/portfolio/branding-3.jpg"
+        ],
+        "technologies": [
+            "Adobe Illustrator",
+            "Figma",
+            "Photoshop"
+        ],
+        "features": [
+            "Logo Design",
+            "Brand Guidelines",
+            "Packaging Design",
+            "Marketing Collateral"
+        ],
+        "results": {
+            "brandAwareness": "+85%",
+            "socialEngagement": "+150%",
+            "sales": "+60%"
+        },
+        "testimonial": {
+            "text": "Our new brand identity perfectly captures our values. Customers love it!",
+            "author": "Michael Chen",
+            "position": "Founder, GreenLeaf Organic"
+        }
+    }
+]

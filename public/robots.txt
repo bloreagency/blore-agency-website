@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.bloreagency.com/sitemap.xml
+
+# Disallow admin pages (if any in future)
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all resources
+Allow: /images/
+Allow: /fonts/
+Allow: /*.css$
+Allow: /*.js$

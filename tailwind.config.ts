@@ -10,6 +10,10 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			sans: ['var(--font-inter)', 'var(--font-cairo)', 'system-ui', 'sans-serif'],
+  			arabic: ['var(--font-cairo)', 'system-ui', 'sans-serif'],
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
