@@ -18,7 +18,7 @@ export default function AnimatedCounter({
     prefix = '',
     className = '',
 }: AnimatedCounterProps) {
-    const ref = useRef(null)
+    const ref = useRef<HTMLSpanElement>(null)
     const motionValue = useMotionValue(0)
     const springValue = useSpring(motionValue, {
         damping: 60,
