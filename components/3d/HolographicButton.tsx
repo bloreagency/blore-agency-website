@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { RoundedBox } from '@react-three/drei'
 import { motion } from 'framer-motion'
@@ -37,7 +37,7 @@ function Button3D({ isHovered }: { isHovered: boolean }) {
 }
 
 export default function HolographicButton({ children, onClick, className = '', variant = 'primary' }: HolographicButtonProps) {
-    const [isHovered, setIsHovered] = React.useState(false)
+    const [isHovered, setIsHovered] = useState(false)
 
     const baseClasses = variant === 'primary'
         ? 'bg-gradient-to-r from-purple-600 to-cyan-500 text-white'
