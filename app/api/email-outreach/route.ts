@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 interface EmailCampaign {
     to: string;
@@ -126,6 +126,10 @@ export async function POST(request: NextRequest) {
                 return NextResponse.json({ error: 'Invalid template' }, { status: 400 });
         }
 
+        if (!resend) {
+            return NextResponse.json({ error: 'Email service not configured' }, { status: 503 });
+        }
+
         const result = await resend.emails.send({
             from: 'Blore Agency <onboarding@resend.dev>',
             to: to,
@@ -174,6 +178,11 @@ export async function PUT(request: NextRequest) {
                         subject = `آخر رسالة - استشارة مجانية لـ ${company}`;
                         html = templates.followUp2(name, company);
                         break;
+                }
+
+                if (!resend) {
+                    results.push({ email: lead.email, success: false, error: 'Email service not configured' });
+                    continue;
                 }
 
                 const result = await resend.emails.send({
